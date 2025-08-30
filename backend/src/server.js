@@ -18,6 +18,10 @@ app.use(
 app.use(express.json());
 app.use("/api/inngest", serve({ client: inngest, functions }));
 
+app.get("/", (req, res) => {
+  res.send("Hello from the backend!");
+});
+
 const startServer = async () => {
   try {
     await connectDB();
